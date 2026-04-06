@@ -3,11 +3,12 @@ terraform {
     databricks = { source = "databricks/databricks" }
     azurerm    = { source = "hashicorp/azurerm" }
   }
+
   backend "azurerm" {
-    use_oidc = true # Passwordless
+    use_oidc = true
   }
 }
 
-provider "databricks" {
-  host = var.databricks_url # Passed from Global-Init output
+provider "azurerm" {
+  features {}
 }
