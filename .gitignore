@@ -1,0 +1,19 @@
+﻿# Local Terraform working directory
+.terraform/
+.terraform.lock.hcl
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+
+# IDE
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# OS
+Thumbs.db
