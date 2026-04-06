@@ -7,8 +7,9 @@ terraform {
 }
 
 resource "databricks_catalog" "this" {
-  name    = var.catalog_name
-  comment = "Dynamic Catalog for ${var.project_id}"
+  name             = var.catalog_name
+  comment          = "Dynamic Catalog for ${var.project_id}"
+  storage_location = var.storage_location
 }
 
 resource "databricks_grant" "de_team" {
@@ -20,6 +21,6 @@ resource "databricks_grant" "de_team" {
 resource "databricks_cluster_policy" "ui_policy" {
   name = "${var.project_id}-ui-policy"
   definition = jsonencode({
-    "autotermination_minutes": { "type": "fixed", "value": 60 }
+    "autotermination_minutes" : { "type" : "fixed", "value" : 60 }
   })
 }
