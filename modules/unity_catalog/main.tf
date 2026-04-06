@@ -7,9 +7,8 @@ terraform {
 }
 
 resource "databricks_catalog" "this" {
-  name             = var.catalog_name
-  comment          = "Dynamic Catalog for ${var.project_id}"
-  storage_location = var.storage_location
+  name    = var.catalog_name
+  comment = "Dynamic Catalog for ${var.project_id}"
 }
 
 resource "databricks_grant" "de_team" {
