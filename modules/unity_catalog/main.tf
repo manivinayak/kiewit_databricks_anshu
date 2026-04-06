@@ -1,3 +1,11 @@
+terraform {
+  required_providers {
+    databricks = {
+      source = "databricks/databricks"
+    }
+  }
+}
+
 resource "databricks_catalog" "this" {
   name    = var.catalog_name
   comment = "Dynamic Catalog for ${var.project_id}"
